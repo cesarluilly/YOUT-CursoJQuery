@@ -63,3 +63,29 @@
     </script> -->
 </body>
 ```
+
+## Video 5
+
+```html
+<body>
+    <script src="/js/lib/jquery-3.7.1.min.js"></script>
+
+    <div id="miCapa"></div>
+
+    <script>
+        var selectorCapa = $('#miCapa');
+
+        //                  //html mas utilizado para meter tags dentro de un contenedor, como Div en este caso.
+        selectorCapa.html("<p style='color:blue';> Color Azul </p>'");
+
+
+        console.log(selectorCapa);
+
+        var miCapa = selectorCapa[0];
+        
+        console.log(miCapa);
+    </script>
+
+</body>
+```
+
