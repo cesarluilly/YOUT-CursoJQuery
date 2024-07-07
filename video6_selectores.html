@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    <script src="/js/lib/jquery-3.7.1.min.js"></script>
+
+    <!-- 
+    Tipo
+    Clase
+    Id
+    Posesion de un atributo
+    Value de un atributo
+    Indice
+    Pseudo-estado
+    -->
+    <a href="video3_index.html"></a>
+    <a id="segundoLink"></a>
+    <a class="ejemplo"></a>
+    <a class="ejemplo" href="video5_jqueryObject.html"></a>
+    <span class="ejemplo"></span>
+    
+    <script>
+        $(function(){
+            // $("*")
+            // $(".ejemplo")
+            //                                              //Busqueda por atributo
+            // $("[href]")
+            //                                              //Busqueda por atributo y valor
+            // $("[href='video3_index.html']")
+            //                                              //eq devuelve un arreglo, donde la base es 0 del arreglo.
+            // $("a:eq(1)")
+            //                                              //Selecciona todos menos la que tenga como indice zero.
+            // $("a").not(":eq(0)");
+            //                                              //Me selecciona todas las etiqutas de link, menos la que tenga
+            //                                              //  la clase ejemplo, solo me pone en memoria la primera y el
+//                                                          //  segundo.
+            $("a:not(.ejemplo)");
+
+
+        });
+    </script>
+</body>
+</html>
