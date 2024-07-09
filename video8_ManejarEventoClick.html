@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="/js/lib/jquery-3.7.1.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <p id="miParrafo">Soy cambiante</p>
+    <button id="botonAccion">Click aqui</button>
+    <script>
+
+        $(function(){
+            //              //Las ventajas de asignar el selector a una variables, es que si en
+            //              //    algun momento llegara a cambiar el nombre del ID, solo lo cambiaria 
+            //              //    en un solo lugar.
+            let miParrafo = $('#miParrafo');
+
+            var estaOculto = false;
+
+            //              //Forma1, Ecmascript5
+            // $('#botonAccion').click(function(){
+            //     if(
+            //         estaOculto
+            //     ){
+            //         miParrafo.show(); 
+            //     }else{
+            //         miParrafo.hide(); 
+            //     }
+            //     estaOculto = !estaOculto;
+            // });
+
+            //              //Forma2 (Con Funcion Flecha), Ecmascript6
+            $('#botonAccion').click(() => {
+                if(
+                    estaOculto
+                ){
+                    miParrafo.show(); 
+                }else{
+                    miParrafo.hide(); 
+                }
+                estaOculto = !estaOculto;
+            });
+
+
+
+        });
+        
+    </script>
+</body>
+</html>

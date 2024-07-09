@@ -26,22 +26,28 @@
     
     <script>
         $(function(){
-            // $("*")
-            // $(".ejemplo")
+            var tagSeleccionado;
+            // $("*")                                       //
+            
+            // $(".ejemplo")                                //2
+
             //                                              //Busqueda por atributo
-            // $("[href]")
+            // $("[href]")                                  //3
+
             //                                              //Busqueda por atributo y valor
-            // $("[href='video3_index.html']")
+            // $("[href='video3_index.html']")              //4
+
             //                                              //eq devuelve un arreglo, donde la base es 0 del arreglo.
-            // $("a:eq(1)")
+            // $("a:eq(1)")                                 //5
+            
             //                                              //Selecciona todos menos la que tenga como indice zero.
-            // $("a").not(":eq(0)");
+            // $("a").not(":eq(0)");                        //6
             //                                              //Me selecciona todas las etiqutas de link, menos la que tenga
             //                                              //  la clase ejemplo, solo me pone en memoria la primera y el
 //                                                          //  segundo.
-            $("a:not(.ejemplo)");
+            tagSeleccionado = $("a:not(.ejemplo)");
 
-
+            console.log(tagSeleccionado);
         });
     </script>
 </body>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="/js/lib/jquery-3.7.1.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Laraverl</li>
+        <li>Spring</li>
+        <li>Django</li>
+    </ul>
+
+    <script>
+        $(function(){
+            console.log("Iterando elementos del Dom");
+            $('li').each(function(indice, elemento){
+                console.log(indice);
+                console.log($(this));
+                console.log($(this).text());
+            });
+
+            console.log("Iterando elementos de un arrego interno");
+            let numeros = ["uno", "dos", "tres"];
+
+            //              //Each nos permite recorrer los elementos y hacer
+            //              //    algo con los elementos.
+            $.each(numeros, (indice, elemento) => {
+                console.log(`[${indice}] => ${elemento}`);
+            });
+
+            //              //Map.- Nos permite iterar los elementos, pero por cada uno 
+            //              //    de ellos lo devuelve nuevamente.
+            let numerosConMap = ["uno", "dos", "tres"];
+            let dimensiones = $.map(numerosConMap, (numero2) => numero2.length);
+            console.log(dimensiones);
+
+
+
+        });
+    </script>
+</body>
+</html>
