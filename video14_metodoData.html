@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="/js/lib/jquery-3.7.1.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <table id="tablaPaises">
+
+    </table>
+    <script>
+        const $tablaPaises = $('#tablaPaises');
+
+        let paises = [
+        {
+            "id":149, 
+            "nombre":"Peru",
+            "capital":"Lima"
+        },
+        {
+            "id":623, 
+            "nombre":"Expaña",
+            "capital":"Madrid"
+        },
+        {
+            "id":921, 
+            "nombre":"Mexico",
+            "capital":"Mexico"
+        }
+        ];
+
+        const cargarTabla = () => {
+            let tabla = ``;
+            $.each(paises, (indice, pais) => {
+                tabla += `<tr>`;
+                tabla += `<td> ${pais.nombre}</td>`;
+                tabla += `<td> ${pais.capital}</td>`;
+                //          //Estamos convirtiendo a json la info de cada pais y lo guardamos en un atributo de data.
+                tabla += `<td> <button id='${pais.id}' data-pais='${JSON.stringify(pais)}' class='verId'>Ver ID </button> </td>`;
+                tabla += `</tr>`;
+            });
+
+            $tablaPaises.html(tabla);
+        };
+
+        $(document).on('click', '.verId', function(){
+            //              //Vamos a poner el ejemplo de que en cada boton yo quiero guardar informacion de cada pais
+            //              //  convertida a un json.
+            console.log(this);
+
+            //              //Consejo como buena practica, no es bueno estar guardando demasiados datos dentro de un elemento
+            //              //Pero el proposito de este video es mostrar las herramientas. 
+            let paisSeleccionado = $(this).data("pais");
+            console.log(paisSeleccionado);
+
+        });
+
+        $(document).ready(function(){
+            cargarTabla();
+        });
+    </script>
+</body>
+</html>

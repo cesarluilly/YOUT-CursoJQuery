@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="/js/lib/jquery-3.7.1.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <table id="tablaPaises">
+
+    </table>
+    <script>
+        const $tablaPaises = $('#tablaPaises');
+
+        let paises = [
+        {
+            "id":149, 
+            "nombre":"Peru",
+            "capital":"Lima"
+        },
+        {
+            "id":623, 
+            "nombre":"Expaña",
+            "capital":"Madrid"
+        },
+        {
+            "id":921, 
+            "nombre":"Mexico",
+            "capital":"Mexico"
+        }
+        ];
+
+        const cargarTabla = () => {
+            let tabla = ``;
+            $.each(paises, (indice, pais) => {
+                tabla += `<tr>`;
+                tabla += `<td> ${pais.nombre}</td>`;
+                tabla += `<td> ${pais.capital}</td>`;
+                tabla += `<td> <button id='${pais.id}' class='otraClase verId'>Ver ID </button> </td>`;
+                tabla += `</tr>`;
+            });
+
+            $tablaPaises.html(tabla);
+
+            // $('.otraClase').each(function(){
+            //     console.log("******************************");
+            //     console.log(this);
+            //     console.log($(this)); //  //JQuery Object.
+            //     console.log($(this)[0]);
+            // });
+
+        };
+
+        //                  //Click sobre cada elemento que tenga la clase ".verId"
+        //                  //Sobre que elemento esta escuchando dicho evento
+        $(document).on('click', '.verId', function(){
+            // //              //Me selecciona el elemento Tag
+            // console.log(this);
+
+            // //              //Puedo acceder a sus propiedades, pero al tratarse de un arreglo,
+            // //              //    obtenemos la posicion 0;
+            // console.log($(this));
+            
+            // console.log($(this)[0].id);
+
+            //              //Con attr obtenemos el atributo ID del elemento.
+            console.log($(this).attr("id"));
+            console.log($(this).attr("class"));
+            let clases = $(this).attr("class").split(" ");
+            console.log(clases);
+
+            //              //Creando un atributo de manera dinamica.
+            //              //Hasta que le de click en el boton, se agregara el atributo.
+            let id = $(this).attr("id");
+            $(this).attr("name2", `btn_${id}`);
+
+            //              //Remover atributo 
+            $(this).removeAttr("id");
+        });
+
+        $(document).ready(function(){
+            cargarTabla();
+        });
+    </script>
+</body>
+</html>

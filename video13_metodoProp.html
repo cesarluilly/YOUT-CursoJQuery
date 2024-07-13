@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="/js/lib/jquery-3.7.1.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <!-- Cada checkbox tiene una propiedad llamada "checked" para ver si esta seleccionado o no -->
+     <!-- En este caso para este input, los atributos son type y ID -->
+      
+    Valid? <input type="checkbox" id="chkValido" class="miClase">
+
+    <script>
+
+        //attr() y prop() son intercambialbes en la mayoria de casos.
+        $(document).ready(function(){
+            //              //Establecemos en true el valor de la propiedad "Checked"
+            // const a = $('#chkValido').prop('checked', true);
+            // console.log(a);
+
+            $('#chkValido').attr('checked', true)
+
+            //              //LAS PROPIEDADES Y ATRIBUTOS SON COSAS COMPLETAMENTE DIFERENTES
+            //              //Todo lo que nos arroja este, son las propiedades.
+            //              //Y dentro tambien esta la propiedad checked.
+            console.log($('#chkValido')); 
+
+            //              //Traemos el valor de la propiedad "Checked"
+            console.log($('#chkValido').prop('checked'));
+            console.log($('#chkValido').prop('className'));
+        });        
+    </script>
+</body>
+</html>
