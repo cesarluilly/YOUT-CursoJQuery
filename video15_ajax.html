@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="/js/lib/jquery-3.7.1.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let users = [];
+        
+        const listUser = ()=> {
+            $.ajax({
+                //          //Especificamos el verbo o el metodo HTTP.
+                type:'GET',
+                url:'https://jsonplaceholder.typicode.com/users',
+                //          //Especificamos el contenido que esperamos.
+                contentType:'application/json',
+                //          //Valor por defecto, pero lo especificamos
+                async:true,
+                //          //Antes de ejecutar la peticion yo puedo ejecutar algo.
+                beforeSend:function(){
+                    console.log('Antes de la peticion.');
+                },
+                //          //
+                success:function(data){
+                    console.log(data);
+                }, 
+                complete:function(){
+                    console.log("Solicitud completada")
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            })
+        };
+
+        $(document).ready(function(){
+            listUser();
+        });
+
+
+    </script>
+</body>
+</html>
